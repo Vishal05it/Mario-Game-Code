@@ -140,7 +140,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 30;
-  animation: moveCloud 2.15s linear infinite;
+  animation: moveCloud 2.45s linear infinite;
 }
 .score {
   position: absolute;

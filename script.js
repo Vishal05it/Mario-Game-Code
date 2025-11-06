@@ -79,7 +79,7 @@ function playGame() {
         levelDisplay.style.color = "green";
         setTimeout(() => {
             obstacle.remove();
-        }, 2250)
+        }, 2550)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             clearInterval(gameStart);
