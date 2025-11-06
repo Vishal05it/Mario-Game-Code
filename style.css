@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#floor {
+  height: 16vh;
+  background-color: brown;
+  display: grid;
+  position: relative;
+  z-index: 50;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  position: relative;
+}
+#sky {
+  display: flex;
+  gap: 20px;
+  height: 84vh;
+  background-color: skyblue;
+  .buildings {
+    position: absolute;
+    bottom: 15vh;
+    height: 50%;
+    right: -70%;
+    z-index: 20;
+  }
+  #player {
+    position: absolute;
+    height: 30%;
+    top: 20%;
+    left: 2%;
+    z-index: 25;
+    transform: scaleX(-1);
+    filter: drop-shadow();
+  }
+}
+body {
+  overflow: hidden;
+  position: relative;
+}
+.bricks {
+  border: 1px solid;
+}
+#attemptsCOunt {
+  color: blue;
+  text-shadow: none;
+}
+.attempts {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 19px;
+  color: yellow;
+  text-shadow: 0.5px 0.5px 2px black;
+}
+.reset {
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-size: 20px;
+  position: absolute;
+  top: 70%;
+  left: 46%;
+  font-weight: 800;
+  box-shadow: 2px 2px 4px black;
+}
+.startBtn {
+  text-decoration: none;
+  box-shadow: 2px 2px 4px black;
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 13px 21px;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  font-weight: 800;
+}
+.cloudSpan {
+  position: absolute;
+  top: 2%;
+  right: 50%;
+  height: 50%;
+  display: flex;
+  gap: 10px;
+  .cloud {
+    height: 70%;
+    img {
+      height: 100%;
+    }
+  }
+}
+.cspan1 {
+  opacity: 0;
+}
+.cspan2 {
+  opacity: 0;
+}
+.gameOverText {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  font-weight: 800;
+  outline: 4px groove blue;
+}
+.hellPillar {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 60;
+}
+#levelText {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 60;
+  font-size: 32px;
+  font-weight: 900;
+  color: chocolate;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: 0.5px 0.5px 2px black;
+}
+#levelDisplay {
+  color: red;
+  font-style: normal;
+}
+.obstacle {
+  /* background-color: red; */
+  height: 320px;
+  width: 100px;
+  position: absolute;
+  z-index: 30;
+  animation: moveCloud 1.8s linear infinite;
+}
+.score {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 20px;
+  color: blueviolet;
+  z-index: 100;
+}
+.displayScore {
+  color: green;
+}
+.obstacleDownStraight {
+  right: 10%;
+  bottom: 15vh;
+}
+.obstacleUpStraight {
+  height: 320px;
+  right: 10%;
+  top: -4%;
+  img {
+    transform: scaleY(-1);
+  }
+}
+.obstacleUpLeftTilt {
+  right: 10%;
+  transform: rotate(25deg);
+  top: -5%;
+  height: 330px;
+  img {
+    transform: scaleY(-1);
+  }
+}
+.obstacleUpRightTilt {
+  right: 10%;
+  transform: rotate(-25deg);
+  top: -5%;
+  height: 330px;
+  img {
+    transform: scaleY(-1);
+  }
+}
+.obstacleDownRightTilt {
+  right: 30%;
+  bottom: 13vh;
+  height: 330px;
+  transform: rotate(25deg);
+}
+.obstacleDownLeftTilt {
+  right: 30%;
+  bottom: 13vh;
+  height: 330px;
+  transform: rotate(-25deg);
+}
+@keyframes moveCloud {
+  0% {
+    opacity: 1;
+    right: -70%;
+  }
+
+  100% {
+    right: 200%;
+    opacity: 1;
+  }
+}
