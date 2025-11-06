@@ -177,7 +177,7 @@ function playGame() {
         obstacle.style.animation = "moveCloud 1s linear infinite";
         setTimeout(() => {
             obstacle.remove();
-        }, 1250)
+        }, 1110)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             gameOver();
