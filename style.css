@@ -32,7 +32,7 @@
     left: 2%;
     z-index: 25;
     transform: scaleX(-1);
-    filter: drop-shadow();
+    filter: drop-shadow(0px 0px 8px pink);
   }
 }
 body {
