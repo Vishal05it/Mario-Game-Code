@@ -32,7 +32,7 @@
     left: 2%;
     z-index: 25;
     transform: scaleX(-1);
-    filter: drop-shadow(0px 0px 8px pink);
+    filter: drop-shadow(0px 0px 15px pink);
   }
 }
 body {
@@ -140,7 +140,7 @@ body {
   width: 100px;
   position: absolute;
   z-index: 30;
-  animation: moveCloud 1.8s linear infinite;
+  animation: moveCloud 2.15s linear infinite;
 }
 .score {
   position: absolute;

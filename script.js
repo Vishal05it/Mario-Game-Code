@@ -15,8 +15,6 @@ function playGame() {
     let player = document.querySelector("#player");
     let cspan1 = document.querySelector(".cspan1");
     let cspan2 = document.querySelector(".cspan2");
-    let bool2 = true;
-    let bool3 = true;
     let bul1 = document.querySelector("#bul1");
     let bul2 = document.querySelector("#bul2");
     let bul3 = document.querySelector("#bul3");
@@ -27,6 +25,7 @@ function playGame() {
     let seconds = 0;
     let lvl3int;
     let lvl2int;
+    let lvl4int;
     let gameOverMusic = true;
     let gameStart = setInterval(() => {
         pillarMoveL1();
@@ -41,8 +40,14 @@ function playGame() {
         clearInterval(lvl2int);
         lvl3int = setInterval(() => {
             pillarMoveL3();
-        }, 1250)
+        }, 1040)
     }, 60000)
+    let level4 = setTimeout(() => {
+        clearInterval(lvl3int);
+        lvl4int = setInterval(() => {
+            pillarMoveL4();
+        }, 1250)
+    }, 90000)
     let score = setInterval(() => {
         let displayScore = document.querySelector(".displayScore");
         displayScore.innerText = `${seconds}00 Points`;
@@ -54,6 +59,9 @@ function playGame() {
         if (seconds >= 60) {
             clearTimeout(level2);
             currLevel++
+        }
+        if (seconds >= 90) {
+            clearTimeout(level3);
         }
     }, 1000)
 
@@ -70,7 +78,7 @@ function playGame() {
         levelDisplay.innerText = 1;
         setTimeout(() => {
             obstacle.remove();
-        }, 1900)
+        }, 2250)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             clearInterval(gameStart);
@@ -100,10 +108,10 @@ function playGame() {
         obstacle.classList.add(`${currClass}`);
         console.log(currClass);
         levelDisplay.innerText = 2;
-        obstacle.style.animation = "moveCloud 1.2s linear infinite";
+        obstacle.style.animation = "moveCloud 1.95s linear infinite";
         setTimeout(() => {
             obstacle.remove();
-        }, 1350)
+        }, 2050)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             gameOver();
@@ -131,10 +139,41 @@ function playGame() {
         obstacle.classList.add(`${currClass}`);
         console.log(currClass);
         levelDisplay.innerText = 3;
-        obstacle.style.animation = "moveCloud 0.9s linear infinite";
+        obstacle.style.animation = "moveCloud 1.5s linear infinite";
         setTimeout(() => {
             obstacle.remove();
-        }, 1000)
+        }, 1650)
+        obstacle.addEventListener("mouseenter", () => {
+            console.log("Game Over");
+            gameOver();
+            obstacle.style.animation = "none";
+            obstacle.style.display = "none"
+            player.style.display = "none";
+        })
+        obstacle.addEventListener("mouseleave", () => {
+            console.log("Game Over");
+            gameOver();
+            player.style.display = "none";
+            obstacle.style.animation = "none";
+            obstacle.style.display = "none"
+        })
+    }
+    function pillarMoveL4() {
+        let obstacle = document.createElement("div");
+        body.append(obstacle);
+        obstacle.classList.add("obstacle");
+        let hellPillar = document.createElement("img");
+        obstacle.append(hellPillar);
+        hellPillar.classList.add("hellPillar");
+        hellPillar.src = "./Hell Pillar.png";
+        let currClass = spawnBuildings();
+        obstacle.classList.add(`${currClass}`);
+        console.log(currClass);
+        levelDisplay.innerText = 4;
+        obstacle.style.animation = "moveCloud 1s linear infinite";
+        setTimeout(() => {
+            obstacle.remove();
+        }, 2000)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             gameOver();
