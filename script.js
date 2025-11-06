@@ -76,6 +76,7 @@ function playGame() {
         let currClass = spawnBuildings();
         obstacle.classList.add(`${currClass}`);
         levelDisplay.innerText = 1;
+        levelDisplay.style.color = "green";
         setTimeout(() => {
             obstacle.remove();
         }, 2250)
@@ -103,11 +104,12 @@ function playGame() {
         let hellPillar = document.createElement("img");
         obstacle.append(hellPillar);
         hellPillar.classList.add("hellPillar");
-        hellPillar.src = "./Hell Pillar.png";
+        hellPillar.src = "./burning-column-removebg-preview.png";
         let currClass = spawnBuildings();
         obstacle.classList.add(`${currClass}`);
         console.log(currClass);
         levelDisplay.innerText = 2;
+        levelDisplay.style.color = "yellow";
         obstacle.style.animation = "moveCloud 1.95s linear infinite";
         setTimeout(() => {
             obstacle.remove();
@@ -139,6 +141,7 @@ function playGame() {
         obstacle.classList.add(`${currClass}`);
         console.log(currClass);
         levelDisplay.innerText = 3;
+        levelDisplay.style.color = "orange";
         obstacle.style.animation = "moveCloud 1.5s linear infinite";
         setTimeout(() => {
             obstacle.remove();
@@ -170,10 +173,11 @@ function playGame() {
         obstacle.classList.add(`${currClass}`);
         console.log(currClass);
         levelDisplay.innerText = 4;
+        levelDisplay.style.color = "red";
         obstacle.style.animation = "moveCloud 1s linear infinite";
         setTimeout(() => {
             obstacle.remove();
-        }, 2000)
+        }, 1250)
         obstacle.addEventListener("mouseenter", () => {
             console.log("Game Over");
             gameOver();
@@ -232,6 +236,8 @@ function playGame() {
         clearInterval(gameStart);
         clearInterval(lvl3int);
         clearTimeout(level3);
+        clearInterval(lvl4int);
+        clearTimeout(level4);
     }
     function spawnBuildings() {
         let styleArr = ["obstacleDownRightTilt", "obstacleUpLeftTilt", "obstacleDownStraight", "obstacleDownLeftTilt", "obstacleUpStraight", "obstacleUpRightTilt"];

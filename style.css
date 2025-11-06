@@ -131,8 +131,8 @@ body {
   text-shadow: 0.5px 0.5px 2px black;
 }
 #levelDisplay {
-  color: red;
   font-style: normal;
+  color: green;
 }
 .obstacle {
   /* background-color: red; */
