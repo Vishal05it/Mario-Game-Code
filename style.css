@@ -20,8 +20,6 @@
   background-color: skyblue;
   .buildings {
     position: absolute;
-    bottom: 15vh;
-    height: 50%;
     right: -70%;
     z-index: 20;
   }
@@ -34,6 +32,18 @@
     transform: scaleX(-1);
     filter: drop-shadow(0px 0px 15px pink);
   }
+}
+#bul1 {
+  bottom: 3.5vh;
+  height: 70%;
+}
+#bul2 {
+  bottom: -0.7%;
+  height: 75%;
+}
+#bul3 {
+  bottom: 15vh;
+  height: 50%;
 }
 body {
   overflow: hidden;
@@ -153,6 +163,7 @@ body {
 .displayScore {
   color: green;
 }
+
 .obstacleDownStraight {
   right: 10%;
   bottom: 15vh;
