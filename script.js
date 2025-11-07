@@ -38,12 +38,14 @@ function playGame() {
     }, 30000)
     let level3 = setTimeout(() => {
         clearInterval(lvl2int);
+        clearTimeout(level2);
         lvl3int = setInterval(() => {
             pillarMoveL3();
         }, 1040)
     }, 60000)
     let level4 = setTimeout(() => {
         clearInterval(lvl3int);
+        clearTimeout(level3);
         lvl4int = setInterval(() => {
             pillarMoveL4();
         }, 1250)
