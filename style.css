@@ -166,7 +166,7 @@ body {
 
 .obstacleDownStraight {
   right: 10%;
-  bottom: 14vh;
+  bottom: 12vh;
 }
 .obstacleUpStraight {
   height: 340px;
@@ -196,13 +196,13 @@ body {
 }
 .obstacleDownRightTilt {
   right: 30%;
-  bottom: 13vh;
+  bottom: 12vh;
   height: 340px;
   transform: rotate(25deg);
 }
 .obstacleDownLeftTilt {
   right: 30%;
-  bottom: 13vh;
+  bottom: 12vh;
   height: 340px;
   transform: rotate(-25deg);
 }
