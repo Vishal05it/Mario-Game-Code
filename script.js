@@ -248,7 +248,3 @@ function playGame() {
         return styleArr[idx];
     }
 }
-//playGame();
-//  http://10.61.68.37:8080
-//   http://127.0.0.1:8080
-//https://github.com/Vishal05it/Mario-Game.git/
